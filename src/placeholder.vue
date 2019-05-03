@@ -11,7 +11,10 @@ export default {
   props: {
     width: { type: Number, default: 250 },
     height: { type: Number, default: 250 },
-    text: { type: String, default: 'Hi there! :-)' },
+    input: { type: String, default: 'Hi there! :-)' },
+    label: { type: String, default: '' },
+    label_style: { type: String, default: '20px Helvetica bold' },
+    label_color: { type: String, default: '#777' },
     metric: { type: String, default: 'Manhattan' },
     debug: { type: Boolean, default: false },
     hue_range: { type: Array, default: () => {return [0, 359]} },
@@ -40,7 +43,7 @@ export default {
     initialize() {
       let cvs = this.$refs.cnv
       let ctx = cvs.getContext("2d")
-      let points = stringToPoints(this.text, this.width, this.height)
+      let points = stringToPoints(this.input, this.width, this.height)
 
       this.fillCanvas(ctx)
 
@@ -58,6 +61,14 @@ export default {
       )
 
       if (this.debug) drawCenters(ctx, points)
+
+      if (this.label) {
+        ctx.font = this.label_style
+        ctx.strokeStyle = this.label_color
+        ctx.textAlign = "center"
+        ctx.textBaseline = "middle"
+        ctx.fillText(this.label, this.width / 2, this.height / 2)
+      }
 
       // TODO check if this validation is required
       this.placeholder = true
