@@ -1,8 +1,22 @@
-# Vue-Pattern-Placeholder
-This component helps with placeholders in Vue. It uses canvas to render
-patterns from input string like URL. It is processing the string using a hash
-function, extracts bytes, creates pairs of these and calculates HSV colors for
-pattern elements using the area of these.
+# Vue-pattern-placeholder
+This plugin provides a placeholder component for [Vue.js](https://vuejs.org/).
+It uses canvas to render patterns from input string like URL.
+
+# Sample images
+
+![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/z.png) ![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/a.png) ![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/b.png) ![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/c.png)
+
+# Installation
+To install this plugin, open terminal in your Vue project directory and type:
+
+    npm i --save-dev vue-pattern-placeholder
+
+This command will install the plugin in your project `node_modules` dir and
+add it as a project development dependency in project's `package.json` file.
+
+If you need this plugin as a generic dependency, type this command instead:
+
+    npm i --save-dev vue-pattern-placeholder
 
 ## Usage
 To import a component, write:
@@ -12,7 +26,6 @@ To import a component, write:
 Add it to the `components` property
 
     components: {
-        Whatever,
         patternPlaceholder
     },
 
@@ -43,22 +56,28 @@ properties to reach the best look.
  - `hue_range` (Array) - sets a color range in degrees. Example: `[0, 359]`
  - `lightness_range` (Array) - lightness range for pattern pieces in percents. Example: `[0, 100]`
 
-# Demos
+# Inspiration
+I thought about converting text to an image and I remembered [Voronoi](https://en.wikipedia.org/wiki/Voronoi_diagram)
+patterns: these are easy to implement and look very nice.
 
-<p float="left">
-  <img width="100" height="100" src="./doc/images/a.png" />
-  <img width="100" height="100" src="./doc/images/b.png" />
-  <img width="100" height="100" src="./doc/images/c.png" />
-</p>
+![Voronoi pattern animation](https://upload.wikimedia.org/wikipedia/commons/d/d9/Voronoi_growth_euclidean.gif)
+
+Then I had an idea:
+- take a string, process it using a [SHA-256](https://en.wikipedia.org/wiki/SHA-2) hash function
+- extract hash bytes
+- use pairs of bytes, converting each to a float value between 0 and 1 to place X and Y points
+- count pattern segments, use numbers to set each one's hue in [HSV color palette](https://en.wikipedia.org/wiki/HSL_and_HSV)
+- calculate pattern areas
+- use areas to determine lightness of a pattern segment in HSV
 
 # Warning
 Please be aware that this project is still in a testing stage.
 Use at your own risk. Ideas and bug reports are welcome.
 
 # TODO
+- ~~Overlay text~~
+- ~~Fix wrong color representation in overlay text~~
 - Autoreload fix (probably needs a destructor)
-- ~Overlay text~
-- ~Fix wrong color representation in overlay text~
 
 # Acknowledgements
 Thanks to [AnatolV](https://rosettacode.org/wiki/User:AnatolV) from
