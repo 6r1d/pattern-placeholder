@@ -2,6 +2,18 @@
 This plugin provides a placeholder component for [Vue.js](https://vuejs.org/).
 It uses canvas to render patterns from input string like URL.
 
+[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/6r1d/pattern-placeholder/graphs/commit-activity)
+
+## Table of contents
+
+ * [Sample images](#sample-images)
+ * [Installation](#installation)
+ * * [Usage](#usage)
+ * * [API](#api)
+ * [Inspiration](#inspiration)
+
+
 # Sample images
 
 ![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/z.png) ![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/a.png) ![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/b.png) ![](https://github.com/6r1d/pattern-placeholder/raw/master/doc/images/c.png)
@@ -43,7 +55,7 @@ Now you can use it in your template:
 I recommend to start playing with `hue_range` and `lightness_range`
 properties to reach the best look.
 
-### API
+## API
 
  - `width` (Number) - width of an image
  - `height` (Number) - height of an image
@@ -75,9 +87,9 @@ Please be aware that this project is still in a testing stage.
 Use at your own risk. Ideas and bug reports are welcome.
 
 # TODO
-- ~~Overlay text~~
-- ~~Fix wrong color representation in overlay text~~
-- Autoreload fix (probably needs a destructor)
+- [x] Overlay text
+- [x] Fix wrong color representation in overlay text
+- [ ] Autoreload fix (probably needs a destructor)
 
 # Acknowledgements
 Thanks to [AnatolV](https://rosettacode.org/wiki/User:AnatolV) from
