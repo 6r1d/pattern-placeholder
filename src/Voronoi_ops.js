@@ -3,9 +3,20 @@ import { HSLToHex } from './color_ops.js'
 
 // Manhattan metric
 var metrics = {
-  'Manhattan': function(x, y) {
-    return Math.abs(x) + Math.abs(y)
+  'Euclidean': function(x, y) {
+      return Math.sqrt(x*x + y*y)
   },
+  'Manhattan': function(x, y) {
+      return Math.abs(x) + Math.abs(y)
+  },
+  'Minkovski': function(x, y) {
+      return(
+          Math.pow(
+            Math.pow(Math.abs(x),3) + Math.pow(Math.abs(y),3),
+            0.33333
+          )
+      )
+  }
 }
 
 function getAreas(ctx, points, w, h, metric) {

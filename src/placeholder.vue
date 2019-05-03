@@ -47,14 +47,14 @@ export default {
 
       this.fillCanvas(ctx)
 
-      let areas = getAreas(ctx, points, this.width, this.height, 'Manhattan')
+      let areas = getAreas(ctx, points, this.width, this.height, this.metric)
 
       drawVoronoi(
         ctx,
         points,
         this.width,
         this.height,
-        'Manhattan',
+        this.metric,
         areas,
         this.hue_range,
         this.lightness_range
@@ -64,7 +64,7 @@ export default {
 
       if (this.label) {
         ctx.font = this.label_style
-        ctx.strokeStyle = this.label_color
+        ctx.fillStyle = this.label_color
         ctx.textAlign = "center"
         ctx.textBaseline = "middle"
         ctx.fillText(this.label, this.width / 2, this.height / 2)

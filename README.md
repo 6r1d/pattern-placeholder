@@ -20,7 +20,9 @@ Now you can use it in your template:
 
     <patternPlaceholder
       :width="150" :height="150"
-      :text="YOUR URL HERE"
+      :input="''+item_data.media_id"
+      label="150x150"
+      label_style="900 30px Arial" label_color="#000"
       :hue_range="[70, 170]"
       :lightness_range="[0, 100]"
     />
@@ -41,7 +43,8 @@ This project is still being tested.
 
 # TODO
 - Autoreload fix
-- Overlay text
+- --Overlay text--
+- Fix wrong color representation in overlay text
 
 # Acknowledgements
 Thanks to [AnatolV](https://rosettacode.org/wiki/User:AnatolV) from
