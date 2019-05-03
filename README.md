@@ -12,7 +12,9 @@ It uses canvas to render patterns from input string like URL.
  * * [Usage](#usage)
  * * [API](#api)
  * [Inspiration](#inspiration)
-
+ * [Warning](#warning)
+ * [TODO](#todo)
+ * [Acknowledgements](#acknowledgements)
 
 # Sample images
 
@@ -95,3 +97,6 @@ Use at your own risk. Ideas and bug reports are welcome.
 Thanks to [AnatolV](https://rosettacode.org/wiki/User:AnatolV) from
 [RosettaCode](https://rosettacode.org) for a nice
 [Voronoi diagram](https://rosettacode.org/wiki/Voronoi_diagram) implementation.
+
+Thanks to [emn178](https://github.com/emn178) for [js-sha256](https://github.com/emn178/js-sha256) library.
+It is easy to use and helps a lot.
