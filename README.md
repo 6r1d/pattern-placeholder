@@ -16,7 +16,7 @@ Add it to the `components` property
         patternPlaceholder
     },
 
-Now you can use it:
+Now you can use it in your template:
 
     <patternPlaceholder
       :width="150" :height="150"
@@ -30,12 +30,20 @@ properties to reach the best look.
 
 # Demos
 
-![](./doc/img/a.png)
+<p float="left">
+  <img width="100" height="100" src="./doc/images/a.png" />
+  <img width="100" height="100" src="./doc/images/b.png" />
+  <img width="100" height="100" src="./doc/images/c.png" />
+</p>
 
-![](./doc/img/b.png)
+# Warning
+This project is still being tested.
 
-![](./doc/img/c.png)
+# TODO
+- Autoreload fix
+- Overlay text
 
 # Acknowledgements
 Thanks to [AnatolV](https://rosettacode.org/wiki/User:AnatolV) from
-[RosettaCode](https://rosettacode.org) for a nice Voronoi implementation.
+[RosettaCode](https://rosettacode.org) for a nice
+[Voronoi diagram](https://rosettacode.org/wiki/Voronoi_diagram) implementation.
