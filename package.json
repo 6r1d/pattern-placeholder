@@ -1,0 +1,24 @@
+{
+	"name": "pattern-placeholder",
+	"version": "1.0.0",
+	"description": "Adds canvas patterns as placeholder images",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [
+		"placeholder",
+		"mockup",
+		"Voronoi",
+		"pattern",
+		"Vue",
+		"Vue.js",
+		"prototype",
+		"graphics"
+	],
+	"author": "6r1d",
+	"license": "MIT",
+	"dependencies": {
+		"js-sha256": "^0.9.0"
+	}
+}
