@@ -1,5 +1,5 @@
 {
-	"name": "pattern-placeholder",
+	"name": "vue-pattern-placeholder",
 	"version": "1.0.0",
 	"description": "Adds canvas patterns as placeholder images",
 	"main": "index.js",

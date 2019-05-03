@@ -40,6 +40,13 @@ export default {
       ctx.fillStyle = "white"
       ctx.fillRect(0, 0, this.width, this.height)
     },
+    drawLabel(ctx) {
+      ctx.fillStyle = this.label_color
+      ctx.font = this.label_style
+      ctx.textAlign = "center"
+      ctx.textBaseline = "middle"
+      ctx.fillText(this.label, this.width / 2, this.height / 2)
+    },
     initialize() {
       let cvs = this.$refs.cnv
       let ctx = cvs.getContext("2d")
@@ -63,11 +70,7 @@ export default {
       if (this.debug) drawCenters(ctx, points)
 
       if (this.label) {
-        ctx.font = this.label_style
-        ctx.fillStyle = this.label_color
-        ctx.textAlign = "center"
-        ctx.textBaseline = "middle"
-        ctx.fillText(this.label, this.width / 2, this.height / 2)
+        this.drawLabel(ctx)
       }
 
       // TODO check if this validation is required
