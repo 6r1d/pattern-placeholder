@@ -65,18 +65,20 @@ properties to reach the best look.
 
 ## API
 
- | Option          | Data-type(s) | description                                                                 |
- |-----------------|--------------|-----------------------------------------------------------------------------|
- | width           | Number       | width of an image                                                           |
- | height          | Number       | height of an image                                                          |
- | input           | String       | this text will be converted to a pattern                                    |
- | label           | String       | text label to show                                                          |
- | label_style     | String       | canvas font style. Example: `900 30px Arial`                                |
- | label_color     | String       | color of a label. Example: `#777`                                           |
- | metric          | String       | metric, used to create a pattern. Examples: Euclidean, Manhattan, Minkovski |
- | debug           | Boolean      | allows to show center points for a Voronoi pattern                          |
- | hue_range       | Array        | sets a color range in degrees. Example: `[0, 359]`                          |
- | lightness_range | Array        | lightness range for pattern pieces in percents. Example: `[0, 100]`         |
+*For now, none of the parameters are required.*
+
+ | Option          | Data-type(s) | description                                                                 | Default             |
+ |-----------------|--------------|-----------------------------------------------------------------------------|---------------------|
+ | width           | Number       | width of an image                                                           | 250                 |
+ | height          | Number       | height of an image                                                          | 250                 |
+ | input           | String       | this text will be converted to a pattern                                    | Hi there! :-)       |
+ | label           | String       | text label to show                                                          | **No label**        |
+ | label_style     | String       | canvas font style. Example: `900 30px Arial`                                | 20px Helvetica bold |
+ | label_color     | String       | color of a label. Example: `#777`                                           | \#777               |
+ | metric          | String       | metric, used to create a pattern. Examples: Euclidean, Manhattan, Minkovski | Manhattan           |
+ | debug           | Boolean      | allows to show center points for a Voronoi pattern                          | false               |
+ | hue_range       | Array        | sets a color range in degrees. Example: `[0, 359]`                          | [0, 359]            |
+ | lightness_range | Array        | lightness range for pattern pieces in percents. Example: `[0, 100]`         | [0, 100]            |
 
 # Inspiration
 I thought about converting text to an image and I remembered [Voronoi](https://en.wikipedia.org/wiki/Voronoi_diagram)
