@@ -4,7 +4,7 @@
   "bugs": {
     "url" : "https://github.com/6r1d/pattern-placeholder/issues"
   },
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Adds canvas patterns as placeholder images",
 	"main": "index.js",
 	"scripts": {
