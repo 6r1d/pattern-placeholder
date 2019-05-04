@@ -45,7 +45,7 @@ To import a component, write:
 
 Add it to the `components` property
 
-    components: { 
+    components: {
         patternPlaceholder
     },
 
@@ -99,7 +99,7 @@ Use at your own risk. Ideas and bug reports are welcome.
 # TODO
 - [x] Overlay text
 - [x] Fix wrong color representation in overlay text
-- [ ] Autoreload fix (probably needs a destructor)
+- [x] Autoreload fix (probably needs a destructor)
 - [ ] Consider integrating label style and color into one parameter
 - [ ] Label style settings in key-value format
 

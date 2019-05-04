@@ -31,12 +31,24 @@ export default {
     }
   },
   beforeDestroy() {
-    if (this.player) {
-      this.dispose()
+    if (this.placeholder) {
+      this.clearCanvas()
     }
   },
+  watch: {
+      width()           { this.redraw() },
+      height()          { this.redraw() },
+      input()           { this.redraw() },
+      label()           { this.redraw() },
+      label_style()     { this.redraw() },
+      label_color()     { this.redraw() },
+      metric()          { this.redraw() },
+      debug()           { this.redraw() },
+      hue_range()       { this.redraw() },
+      lightness_range() { this.redraw() },
+  },
   methods: {
-    fillCanvas(ctx) {
+    clearCanvas(ctx) {
       ctx.fillStyle = "white"
       ctx.fillRect(0, 0, this.width, this.height)
     },
@@ -47,24 +59,18 @@ export default {
       ctx.textBaseline = "middle"
       ctx.fillText(this.label, this.width / 2, this.height / 2)
     },
-    initialize() {
+    redraw() {
       let cvs = this.$refs.cnv
       let ctx = cvs.getContext("2d")
       let points = stringToPoints(this.input, this.width, this.height)
-
-      this.fillCanvas(ctx)
-
+      this.clearCanvas(ctx)
       let areas = getAreas(ctx, points, this.width, this.height, this.metric)
-
       drawVoronoi(
-        ctx,
-        points,
-        this.width,
-        this.height,
+        ctx, points,
+        this.width, this.height,
         this.metric,
         areas,
-        this.hue_range,
-        this.lightness_range
+        this.hue_range, this.lightness_range
       )
 
       if (this.debug) drawCenters(ctx, points)
@@ -72,6 +78,9 @@ export default {
       if (this.label) {
         this.drawLabel(ctx)
       }
+    },
+    initialize() {
+      this.redraw()
 
       // TODO check if this validation is required
       this.placeholder = true
