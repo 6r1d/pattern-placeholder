@@ -82,7 +82,6 @@ export default {
     initialize() {
       this.redraw()
 
-      // TODO check if this validation is required
       this.placeholder = true
     },
   },
