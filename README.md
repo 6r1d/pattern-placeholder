@@ -41,11 +41,11 @@ If you need this plugin as a generic dependency, type this command instead:
 ## Usage
 To import a component, write:
 
-    import patternPlaceholder from 'pattern-placeholder'
+    import patternPlaceholder from 'vue-pattern-placeholder'
 
 Add it to the `components` property
 
-    components: {
+    components: { 
         patternPlaceholder
     },
 
