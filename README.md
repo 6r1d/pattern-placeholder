@@ -10,6 +10,7 @@ It uses canvas to render patterns from input string like URL.
 
 ## Table of contents
 
+ * [Demo](#demo)
  * [Sample images](#sample-images)
  * [Installation](#installation)
  * * [Usage](#usage)
@@ -18,6 +19,8 @@ It uses canvas to render patterns from input string like URL.
  * [Inspiration](#inspiration)
  * [TODO](#todo)
  * [Acknowledgements](#acknowledgements)
+
+# [Demo](https://6r1d.github.io/pattern-placeholder-demo/)
 
 # Sample images
 
@@ -103,6 +106,8 @@ Then I had an idea:
 - [x] Fix wrong color representation in overlay text
 - [x] Autoreload fix (probably needs a destructor)
 - [x] Fix empty canvas on width / height change
+- [x] Fixed beforeDestroy bug
+- [x] Added demo
 - [ ] Consider integrating label style and color into one parameter
 - [ ] Label style settings in key-value format
 - [ ] Extend hue setting to a list of several possible hues

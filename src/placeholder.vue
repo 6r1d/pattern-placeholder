@@ -31,21 +31,22 @@ export default {
     }
   },
   beforeDestroy() {
-    if (this.placeholder) {
-      this.clearCanvas()
+    let ctx = this.$refs.cnv ? this.$refs.cnv.getContext("2d") : undefined
+    if (this.placeholder && ctx) {
+      this.clearCanvas(ctx)
     }
   },
   watch: {
       width()           { this.redrawOnNextTick() },
       height()          { this.redrawOnNextTick() },
-      input()           { this.redraw() },
-      label()           { this.redraw() },
-      label_style()     { this.redraw() },
-      label_color()     { this.redraw() },
-      metric()          { this.redraw() },
-      debug()           { this.redraw() },
-      hue_range()       { this.redraw() },
-      lightness_range() { this.redraw() },
+      input()           { this.redrawOnNextTick() },
+      label()           { this.redrawOnNextTick() },
+      label_style()     { this.redrawOnNextTick() },
+      label_color()     { this.redrawOnNextTick() },
+      metric()          { this.redrawOnNextTick() },
+      debug()           { this.redrawOnNextTick() },
+      hue_range()       { this.redrawOnNextTick() },
+      lightness_range() { this.redrawOnNextTick() },
   },
   methods: {
     clearCanvas(ctx) {
