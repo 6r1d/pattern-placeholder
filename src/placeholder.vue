@@ -75,9 +75,7 @@ export default {
 
       if (this.debug) drawCenters(ctx, points)
 
-      if (this.label) {
-        this.drawLabel(ctx)
-      }
+      if (this.label) this.drawLabel(ctx)
     },
     initialize() {
       this.redraw()

@@ -14,8 +14,8 @@ It uses canvas to render patterns from input string like URL.
  * [Installation](#installation)
  * * [Usage](#usage)
  * * [API](#api)
- * [Inspiration](#inspiration)
  * [Warning](#warning)
+ * [Inspiration](#inspiration)
  * [TODO](#todo)
  * [Acknowledgements](#acknowledgements)
 
@@ -67,7 +67,7 @@ properties to reach the best look.
 
 *For now, none of the parameters are required.*
 
- | Option          | Data-type(s) | description                                                                 | Default             |
+ | Option          | Data-type(s) | Description                                                                 | Default             |
  |-----------------|--------------|-----------------------------------------------------------------------------|---------------------|
  | width           | Number       | width of an image                                                           | 250                 |
  | height          | Number       | height of an image                                                          | 250                 |
@@ -79,6 +79,10 @@ properties to reach the best look.
  | debug           | Boolean      | allows to show center points for a Voronoi pattern                          | false               |
  | hue_range       | Array        | sets a color range in degrees. Example: `[0, 359]`                          | [0, 359]            |
  | lightness_range | Array        | lightness range for pattern pieces in percents. Example: `[0, 100]`         | [0, 100]            |
+
+# Warning
+Please be aware that this project is still in a testing stage.
+Use at your own risk. Ideas and bug reports are welcome.
 
 # Inspiration
 I thought about converting text to an image and I remembered [Voronoi](https://en.wikipedia.org/wiki/Voronoi_diagram)
@@ -94,14 +98,11 @@ Then I had an idea:
 - calculate pattern areas
 - use areas to determine lightness of a pattern segment in HSV
 
-# Warning
-Please be aware that this project is still in a testing stage.
-Use at your own risk. Ideas and bug reports are welcome.
-
 # TODO
 - [x] Overlay text
 - [x] Fix wrong color representation in overlay text
 - [x] Autoreload fix (probably needs a destructor)
+- [ ] Fix empty canvas on width / height change
 - [ ] Consider integrating label style and color into one parameter
 - [ ] Label style settings in key-value format
 

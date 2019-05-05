@@ -19,23 +19,30 @@ var metrics = {
   }
 }
 
-function getAreas(ctx, points, w, h, metric) {
+function getAreas(ctx, points, width, height, metric) {
   let areas = new Array(points.length).fill(0)
-  let x, y, d, dm, j = 0
-  for (y = 0; y < h; y++) {
-    for (x = 0; x < w; x++) {
-      dm = metrics[metric](h, w)
-      j = -1
-      for (var pointId = 0; pointId < points.length; pointId++) {
-        d = metrics[metric](points[pointId].x - x, points[pointId].y - y)
-        if (d < dm) {
-          dm = d
-          j = pointId
+  let x, y, distanceMetric, cellId = 0
+  let distance = 0
+  let initialDistanceMetric = metrics[metric](height, width)
+  for (y = 0; y < height; y++) {
+    for (x = 0; x < width; x++) {
+      // Set initial values for distance metric output and cell id
+      distanceMetric = initialDistanceMetric
+      cellId = -1
+      // Iterate points
+      for (let pointId = 0; pointId < points.length; pointId++) {
+        distance = metrics[metric](points[pointId].x - x, points[pointId].y - y)
+        // Current point found in points list, remember it
+        if (distance < distanceMetric) {
+          distanceMetric = distance
+          cellId = pointId
         }
       }
-      areas[j]++
-    }
-  }
+      areas[cellId]++
+    } //fend x
+  } //fend y
+
+
   return areas
 }
 
@@ -46,8 +53,8 @@ function drawCenters(ctx, points) {
   }
 }
 
-function drawVoronoi(ctx, points, w, h, metric, areas, hue_range, lightness_range) {
-  let x, y, d, dm, j = 0
+function drawVoronoi(ctx, points, width, height, metric, areas, hue_range, lightness_range) {
+  let x, y, distanceMetric, cellId = 0
 
   let C = new Array(points.length)
   let max_area = Math.max(...areas)
@@ -56,22 +63,31 @@ function drawVoronoi(ctx, points, w, h, metric, areas, hue_range, lightness_rang
 
   for (var i = 0; i < points.length; i++) {
     hue = multiplyInRange(hue_range[0], hue_range[1], i / points.length)
-    lightness = multiplyInRange(lightness_range[0], lightness_range[1], areas[i] / max_area)
+    lightness = multiplyInRange(
+      lightness_range[0],
+      lightness_range[1],
+      areas[i] / max_area
+    )
     C[i] = HSLToHex(hue, saturation, lightness)
   }
 
-  for (y = 0; y < h; y++) {
-    for (x = 0; x < w; x++) {
-      dm = metrics[metric](h, w)
-      j = -1
+  let distance = 0
+  let initialDistanceMetric = metrics[metric](height, width)
+  for (y = 0; y < height; y++) {
+    for (x = 0; x < width; x++) {
+      // Set initial values for distance metric output and cell id
+      distanceMetric = initialDistanceMetric
+      cellId = -1
+      // Iterate points
       for (let pointId = 0; pointId < points.length; pointId++) {
-        d = metrics[metric](points[pointId].x - x, points[pointId].y - y)
-        if (d < dm) {
-          dm = d
-          j = pointId
+        distance = metrics[metric](points[pointId].x - x, points[pointId].y - y)
+        // Current point found in points list, remember it
+        if (distance < distanceMetric) {
+          distanceMetric = distance
+          cellId = pointId
         }
-      } //fend i
-      ctx.fillStyle = C[j];
+      }
+      ctx.fillStyle = C[cellId];
       ctx.fillRect(x, y, 1, 1);
     } //fend x
   } //fend y
