@@ -36,8 +36,8 @@ export default {
     }
   },
   watch: {
-      width()           { this.redraw() },
-      height()          { this.redraw() },
+      width()           { this.redrawOnNextTick() },
+      height()          { this.redrawOnNextTick() },
       input()           { this.redraw() },
       label()           { this.redraw() },
       label_style()     { this.redraw() },
@@ -58,6 +58,13 @@ export default {
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
       ctx.fillText(this.label, this.width / 2, this.height / 2)
+    },
+    // Vue’s DOM updates are asynchronous, with and height updates
+    // are made on next tick
+    redrawOnNextTick() {
+      this.$nextTick(() => {
+          this.redraw()
+      })
     },
     redraw() {
       let cvs = this.$refs.cnv

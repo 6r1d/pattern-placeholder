@@ -102,7 +102,7 @@ Then I had an idea:
 - [x] Overlay text
 - [x] Fix wrong color representation in overlay text
 - [x] Autoreload fix (probably needs a destructor)
-- [ ] Fix empty canvas on width / height change
+- [x] Fix empty canvas on width / height change
 - [ ] Consider integrating label style and color into one parameter
 - [ ] Label style settings in key-value format
 
