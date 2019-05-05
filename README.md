@@ -2,7 +2,7 @@
 This plugin provides a placeholder component for [Vue.js](https://vuejs.org/).
 It uses canvas to render patterns from input string like URL.
 
-<span class="badge-npmversion"><a href="https://www.npmjs.com/package/vue-pattern-placeholder" title="View this project on NPM"><img src="https://img.shields.io/npm/v/badges.svg" alt="NPM version" /></a></span>
+[![NPM version](https://img.shields.io/npm/v/vue-pattern-placeholder.svg)](https://www.npmjs.com/package/vue-pattern-placeholder)
 [![Dependencies](https://img.shields.io/librariesio/release/npm/vue-pattern-placeholder.svg)](https://libraries.io/npm/vue-pattern-placeholder)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/6r1d/pattern-placeholder/graphs/commit-activity)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
@@ -105,6 +105,7 @@ Then I had an idea:
 - [x] Fix empty canvas on width / height change
 - [ ] Consider integrating label style and color into one parameter
 - [ ] Label style settings in key-value format
+- [ ] Extend hue setting to a list of several possible hues
 
 # Acknowledgements
 Thanks to [AnatolV](https://rosettacode.org/wiki/User:AnatolV) from
